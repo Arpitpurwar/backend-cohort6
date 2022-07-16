@@ -9,9 +9,22 @@ const cakePromise = function(cakeType){
 		})
 }
 
+function bringCake(){}
+function bringFries(){}
+function serveDrink(){}
 
-cakePromise('vanilla').then(function(data){
-	console.log('data', data)
-}).catch(function(err){
-	console.log(err)
-})
+function preparePromise(){
+	return new Promise((resolve, reject) => {
+		bringCake()
+		bringFries()
+		serveDrink()
+	})
+}
+
+Promise.all([bringCake,bringFries,serveDrink ])
+.then((cake, ries, drinks ))
+
+
+
+cakePromise('vanilla').then(data => console.log(data))
+.catch(err => console.log(err))
