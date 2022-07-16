@@ -1,0 +1,25 @@
+{
+  "name": "backend-cohort6",
+  "version": "1.0.0",
+  "description": "this is sample server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arpitpurwar/backend-cohort6.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Arpit Purwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arpitpurwar/backend-cohort6/issues"
+  },
+  "homepage": "https://github.com/Arpitpurwar/backend-cohort6#readme",
+  "dependencies": {
+    "auth": "0.0.9"
+  }
+}
