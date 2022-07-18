@@ -17,7 +17,7 @@ const getCakes = () => {
 }
 
 const getDrink = () => {
-	return new Promise(reject => 
+	return new Promise((resolve,reject) => 
 		{
 			setTimeout(function(){
 				reject(new Error("Whoops!"))
@@ -34,10 +34,10 @@ async function startParty(){
 	return {fries, cakes, drink}
 	}catch(err){
 		console.log("startParty",err)
-		return err
+		throw err
 	}
 
 }
 
-startParty().then(data => console.log(data) )
-.catch(err => console.log(err))
+startParty().then(data => console.log("hey",data) )
+.catch(err => console.log("catchd it properly",err))
