@@ -9,20 +9,20 @@ const cakePromise = function(cakeType){
 		})
 }
 
-function bringCake(){}
-function bringFries(){}
-function serveDrink(){}
+// function bringCake(){}
+// function bringFries(){}
+// function serveDrink(){}
 
-function preparePromise(){
-	return new Promise((resolve, reject) => {
-		bringCake()
-		bringFries()
-		serveDrink()
-	})
-}
+// function preparePromise(){
+// 	return new Promise((resolve, reject) => {
+// 		bringCake()
+// 		bringFries()
+// 		serveDrink()
+// 	})
+// }
 
-Promise.all([bringCake,bringFries,serveDrink ])
-.then((cake, ries, drinks ))
+// Promise.all([bringCake,bringFries,serveDrink ])
+// .then((cake, ries, drinks ))
 
 
 
