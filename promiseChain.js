@@ -16,15 +16,6 @@ function cutVegies(data){
 	})
 }
 
-const makeBurger = () => 
-getVegies()
-.then(data => 
-	cutVegies(data).then(data) => getBun())
-
-
-
-
-
 
 makeBurger().then( data => serve(data)).catch(err => console.log('No burger'))
 
