@@ -2,7 +2,7 @@ const httpServer = require('http');
 
 
 function listener(request, response){
-	if(request.url === '/user'){
+	if(request.url === '/user' && request.method === 'GET'){
 		response.end('Hey I am User API')
 	}else if(request.url === '/address'){
 		response.end('Hey I am Address API')
