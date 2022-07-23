@@ -2,6 +2,12 @@ const express = require('express')
 
 const app = express()
 
+app.use(function(req,res,next){
+	console.log('hey I am global middleware all the request go from me first')
+	console.log('URL',req.url)
+	next()
+})
+
 app.get('/', function(req, res){
 	res.send({name : 'Arpit', age: 24})
 })
@@ -25,8 +31,8 @@ app.get('/address',loggingMiddleware,function(req,res){
 })
 
 function loggingMiddleware(req, res, next){
-	console.log('In Middleware')
-	res.status(400).send('It is an error in middleware')
+	console.log('In local Middleware for adress route')
+	next()
 }
 
 app.listen(8000, function(){
