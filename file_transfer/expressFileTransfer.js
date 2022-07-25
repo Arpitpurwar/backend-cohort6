@@ -15,8 +15,7 @@ app.use(function(req,res,next){
 	fs.stat(filePath,function(err, fileInfo){
 		if(err){
 			console.log('err while checking about file', err)
-			next()
-			return
+			res.status(400).send({''})
 		}
 
 		if(fileInfo.isFile()){
@@ -32,7 +31,7 @@ app.use(function(req,res,next){
 
 app.use(function(req,res,next){
 	console.log('Invalid URL/ missing files')
-	
+
 	res.status(400).send('Invalid URl from client side')
 })
 

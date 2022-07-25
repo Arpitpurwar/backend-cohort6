@@ -1,6 +1,6 @@
 const httpServer = require('http');
 
-
+// listener method for server creation
 function listener(request, response){
 	if(request.url === '/user' && request.method === 'GET'){
 		response.end('Hey I am User API')
