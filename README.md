@@ -14,3 +14,5 @@ npx sequelize init -> config, models, migrations, seeders
 
 npx sequelize db:create ---> database created
 
+npx sequelize model:generate --name User --attributes name:text,role:text,email:text
+npx sequelize model:generate --name Post --attributes userId:integer,content:text
