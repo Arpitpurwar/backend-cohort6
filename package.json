@@ -1,0 +1,30 @@
+{
+  "name": "backend-cohort6",
+  "version": "1.0.0",
+  "description": "sequelize",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arpitpurwar/backend-cohort6.git"
+  },
+  "keywords": [
+    "database"
+  ],
+  "author": "arpit purwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arpitpurwar/backend-cohort6/issues"
+  },
+  "homepage": "https://github.com/Arpitpurwar/backend-cohort6#readme",
+  "dependencies": {
+    "-": "0.0.1",
+    "express": "^4.18.1",
+    "g": "^2.0.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1"
+  }
+}
