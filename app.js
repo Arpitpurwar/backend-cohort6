@@ -1,5 +1,5 @@
 const express = require('express')
-const { sequelize, User, Post} = require('./models')
+const { sequelize, User, Post, Employee} = require('./models')
 const app = express()
 
 app.use(express.json())
@@ -7,6 +7,7 @@ app.use(express.json())
 app.post('/createUser', async function(req,res){
 
 	const {name,email, age, role} = req.body;
+	console.log('body', req.body)
 	try{
 		const users = await User.create({name,email,age, role});
 		res.send(users)
