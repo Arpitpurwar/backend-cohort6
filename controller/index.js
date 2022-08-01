@@ -1,4 +1,5 @@
-const { User } = require('../models')
+const { User, sequelize } = require('../models')
+const {Op} = require('sequelize')
 
 async function createUser(req,res){
 
@@ -15,12 +16,34 @@ async function createUser(req,res){
 async function getAllUsers(req,res){
 
 	try{
-		const users = await User.findAll();
-		res.render('user',{users})
+		const users = await User.findAll({
+			where: {
+				[Op.or]:[
+					{ name:'Rohan'},
+					{role:'Manager'}
+				]
+			}
+		});
+		res.json(users)
 	}catch(err){
 		console.log('err', err)
 		res.status(500).send({err : 'fetch error'})
 	}
 }
 
-module.exports = { getAllUsers, createUser }
+async function updateUser(req,res){
+	const role = req.body.role;
+	const id = req.body.id;
+	try{
+		const users = await User.update({role :role },{where : {
+		id : id
+		}});
+		res.json(users)
+	}catch(err){
+		console.log('err', err)
+		res.status(500).send({err : 'fetch error'})
+	}
+}
+
+
+module.exports = { getAllUsers, createUser, updateUser }
