@@ -4,6 +4,9 @@ const app = express()
 
 const routes = require('./routes')
 
+app.set('view engine', 'pug')
+app.set('views', './views')
+
 app.use(express.json())
 app.use(routes)
 
