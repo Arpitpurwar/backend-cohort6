@@ -1,4 +1,11 @@
 const {serverPort} = require('./configs/config.server')
+const express = require('express')
 
 
-console.log('serverPort', serverPort)
+const app = express()
+
+
+app.listen(serverPort, ()=> {
+	console.log('server is running on this port', serverPort)
+})
+
