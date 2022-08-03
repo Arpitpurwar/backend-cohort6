@@ -1,4 +1,4 @@
-const {serverPort} = require('./configs/config.server')
+const {serverPort} = require('./configs/server.config')
 const express = require('express')
 
 
