@@ -7,3 +7,11 @@ const connection = mysql.createConnection({
   user: USER,
   database: DB
 });
+
+
+connection.query(
+	'select * from Users',
+	function(err, result){
+		console.log('result', result)
+	}
+)
