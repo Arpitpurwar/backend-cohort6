@@ -7,6 +7,29 @@ const app = express()
 
 app.listen(serverPort, async ()=> {
 	console.log('server is running on this port', serverPort)
-	await Categories.sync({force: true})
+	await init()
 })
 
+async function init(){
+	try{
+		await Categories.sync({force:true})
+	
+		const defaultCategories = [
+		{
+			name : 'Mobile',
+			description: 'About Mobile'
+		},
+		{
+			name: 'Washing Machine',
+			description: 'About Washing Machine'
+		}
+		]
+
+		const result = await Categories.bulkCreate(defaultCategories)
+		console.log(result)
+	}
+	catch(err){
+		console.log(err)
+	}
+
+}
