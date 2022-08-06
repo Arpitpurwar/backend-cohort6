@@ -23,7 +23,18 @@ async function createCategory(req, res){
 
 }
 
+async function getAllCategory(req, res){
+	try{
+		const result = await Categories.findAll()
+		res.send(result)
+	}catch(err){
+		console.log('err in getting categories', err)
+		res.status(500).send({msg : 'Internal server error'})
+	}
+}
+
 
 module.exports = {
-	createCategory
+	createCategory,
+	getAllCategory
 }
