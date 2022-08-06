@@ -14,4 +14,5 @@ routes.get('/ecomm/api/v1/categories/:id', getCategoryOnId)
 routes.put('/ecomm/api/v1/categories/:id', updateCategory)
 
 routes.delete('/ecomm/api/v1/categories/:id', deleteCategory)
+
 module.exports = routes
