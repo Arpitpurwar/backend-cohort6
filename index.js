@@ -1,7 +1,7 @@
 const {serverPort} = require('./config/server.config')
 const express = require('express')
 const { Categories, sequelize } = require('./models')
-const routes = require('./routes')
+const routes = require('./routes/category')
 const app = express()
 
 app.use(express.json())
