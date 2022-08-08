@@ -27,9 +27,7 @@ async function init(){
 			description: 'About Washing Machine'
 		}
 		]
-
-		const result = await Categories.bulkCreate(defaultCategories)
-		console.log(result)
+		await Categories.bulkCreate(defaultCategories)
 	}
 	catch(err){
 		console.log(err)
