@@ -29,7 +29,23 @@ async function getAllProduct(req,res){
 	}
 }
 
+async function getProductOnId(req,res){
+
+	const productId = req.params.id;
+	try{
+		const result = await Products.findOne({
+			where : {
+				id: productId
+			}
+		});
+		res.send(result)
+	}catch(err){
+		res.status(500).send({msg: 'Internal server error',err})
+	}
+}
+
 module.exports = {
 	createProduct,
-	getAllProduct
+	getAllProduct,
+	getProductOnId
 }
