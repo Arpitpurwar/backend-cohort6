@@ -31,3 +31,13 @@ localhost:2500/ecomm/api/v1/categories/1
 
 Products:
 npx sequelize model:generate --name Products --attributes name:text,cost:integer,description:text,quantity:integer
+
+POST API
+localhost:2500/ecomm/api/v1/products
+
+{
+    "description":"For men",
+    "name" :"summer shirts",
+    "cost": 870,
+    "quantity": 20
+}
