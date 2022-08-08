@@ -14,8 +14,8 @@ app.listen(serverPort, async ()=> {
 
 async function init(){
 	try{
-		await Categories.sync({force:true})
-	
+		await sequelize.sync({force:true})
+
 		const defaultCategories = [
 		{
 			name : 'Mobile',
