@@ -15,4 +15,4 @@ routes.put('/ecomm/api/v1/categories/:id', updateCategory)
 
 routes.delete('/ecomm/api/v1/categories/:id', deleteCategory)
 
-module.exports = routes
+module.exports = {categoryRoutes : routes}

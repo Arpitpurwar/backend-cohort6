@@ -1,11 +1,12 @@
 const {serverPort} = require('./config/server.config')
 const express = require('express')
 const { Categories, sequelize } = require('./models')
-const routes = require('./routes/category')
+const {categoryRoutes, productRoutes} = require('./routes')
 const app = express()
 
 app.use(express.json())
-app.use(routes)
+app.use(categoryRoutes)
+app.use(productRoutes)
 
 app.listen(serverPort, async ()=> {
 	console.log('server is running on this port', serverPort)
