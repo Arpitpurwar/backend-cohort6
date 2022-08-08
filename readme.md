@@ -41,3 +41,22 @@ localhost:2500/ecomm/api/v1/products
     "cost": 870,
     "quantity": 20
 }
+
+GET API
+http://localhost:2500/ecomm/api/v1/products
+
+GET API based on product ID
+http://localhost:2500/ecomm/api/v1/products/1
+
+Update API/ PUT
+localhost:2500/ecomm/api/v1/products/2
+
+{
+    "name" : "bank",
+    "description":"about bank & payment",
+    "quantity": 24,
+    "cost": 450
+}
+
+DELETE API:
+localhost:2500/ecomm/api/v1/products/2
