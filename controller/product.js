@@ -44,8 +44,14 @@ async function getProductOnId(req,res){
 	}
 }
 
+async function updateProduct(req,res){}
+
+async function deleteProduct(req,res){}
+
 module.exports = {
 	createProduct,
 	getAllProduct,
-	getProductOnId
+	getProductOnId,
+	deleteProduct,
+	updateProduct
 }
