@@ -1,6 +1,6 @@
 const {serverPort} = require('./config/server.config')
 const express = require('express')
-const { Categories, sequelize } = require('./models')
+const { Categories, sequelize, Products } = require('./models')
 const {categoryRoutes, productRoutes} = require('./routes')
 const app = express()
 
@@ -17,6 +17,21 @@ async function init(){
 	try{
 		await sequelize.sync({force:true})
 
+		const defaultProducts = [
+{
+    "description":"For men",
+    "name" :"summer shirts",
+    "cost": 870,
+    "quantity": 20
+},
+{
+    "description":"For women",
+    "name" :"female shirts",
+    "cost": 1200,
+    "quantity": 20
+}
+		]
+
 		const defaultCategories = [
 		{
 			name : 'Mobile',
@@ -28,6 +43,7 @@ async function init(){
 		}
 		]
 		await Categories.bulkCreate(defaultCategories)
+		await Products.bulkCreate(defaultProducts)
 	}
 	catch(err){
 		console.log(err)
