@@ -12,7 +12,7 @@ async function createProduct(req, res){
 		const description = productData.description;
 		const cost = productData.cost;
 		const quantity = productData.quantity;
-		
+
 		const result = await Products.create({name, description, cost, quantity});
 		res.send({msg: 'Product got created',result})
 	}catch(err){
@@ -20,7 +20,16 @@ async function createProduct(req, res){
 	}
 }
 
+async function getAllProduct(req,res){
+	try{
+		const result = await Products.findAll();
+		res.send(result)
+	}catch(err){
+		res.status(500).send({msg: 'Internal server error',err})
+	}
+}
 
 module.exports = {
-	createProduct
+	createProduct,
+	getAllProduct
 }
