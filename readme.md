@@ -36,10 +36,10 @@ POST API
 localhost:2500/ecomm/api/v1/products
 
 {
-    "description":"For men",
-    "name" :"summer shirts",
-    "cost": 870,
-    "quantity": 20
+"description":"For men",
+"name" :"summer shirts",
+"cost": 870,
+"quantity": 20
 }
 
 GET API
@@ -52,11 +52,29 @@ Update API/ PUT
 localhost:2500/ecomm/api/v1/products/2
 
 {
-    "name" : "bank",
-    "description":"about bank & payment",
-    "quantity": 24,
-    "cost": 450
+"name" : "bank",
+"description":"about bank & payment",
+"quantity": 24,
+"cost": 450
 }
 
 DELETE API:
 localhost:2500/ecomm/api/v1/products/2
+
+/// Revision Class
+mkdir revision
+npm init
+
+npm i express sequelize sequelize-cli mysql2
+npm i nodemon
+
+npx sequelize init
+
+npx sequelize model:generate --name Companies --attributes name:text
+
+npx sequelize model:generate --name Users --attributes name:text
+
+npx sequelize db:migrate
+
+npx sequelize seed:generate --name add-companies
+npx sequelize seed:generate --name add-users
