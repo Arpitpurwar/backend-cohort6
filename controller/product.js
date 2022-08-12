@@ -2,10 +2,6 @@ const { Products } = require('../models')
 
 async function createProduct(req, res){
 	const productData = req.body;
-	
-	if(!(productData.name && productData.cost && productData.quantity)){
-		res.status(400).send({msg : 'Name, Cost & Quantity is missing'})
-	}
 
 	try{
 		const name = productData.name;

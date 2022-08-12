@@ -1,9 +1,10 @@
 const express = require('express')
 const {createProduct, getAllProduct, getProductOnId, updateProduct, deleteProduct } = require('../controller/product')
 
+const { validateProductData } = require('../middleware')
 const routes = express.Router()
 
-routes.post('/ecomm/api/v1/products', createProduct)
+routes.post('/ecomm/api/v1/products',[validateProductData], createProduct)
 
 routes.get('/ecomm/api/v1/products', getAllProduct)
 
