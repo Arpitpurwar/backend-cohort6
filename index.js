@@ -18,36 +18,45 @@ async function init(){
 		await sequelize.sync({force:true})
 
 		const defaultProducts = [
-{
-    "description":"For men",
-    "name" :"summer shirts",
-    "cost": 870,
-    "quantity": 20
-},
-{
-    "description":"For women",
-    "name" :"female shirts",
-    "cost": 1200,
-    "quantity": 20
-}
-		]
+		{
+		    "description":"Nyka best products",
+		    "name" :"MakeUP Kit",
+		    "cost": 870,
+		    "quantity": 20,
+			"CategoryId": 1
+		},
+		{
+    		"description":"Best fragnance",
+		    "name" :"Fogg",
+		    "cost": 280,
+		    "quantity": 20,
+			"CategoryId": 2
+		},
+		{
+    		"description":"Best for summer holidays",
+		    "name" :"Summer Clothes",
+		    "cost": 1200,
+		    "quantity": 20,
+			"CategoryId": 3
+		}
+]
 
 		const defaultCategories = [
 		{
 			name : 'Beauty',
-			description: 'About Mobile'
+			description: 'All beauty Products'
 		},
 		{
 			name: 'Fragnance',
-			description: 'About Washing Machine'
+			description: 'All Fragnance Products'
 		},
 		{
 			name: 'Clothes',
-			description: 'About Washing Machine'
+			description: 'All types of Clothes'
 		}
 		]
 		await Categories.bulkCreate(defaultCategories)
-		// await Products.bulkCreate(defaultProducts)
+		await Products.bulkCreate(defaultProducts)
 	}
 	catch(err){
 		console.log(err)
