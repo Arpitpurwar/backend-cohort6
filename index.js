@@ -34,16 +34,20 @@ async function init(){
 
 		const defaultCategories = [
 		{
-			name : 'Mobile',
+			name : 'Beauty',
 			description: 'About Mobile'
 		},
 		{
-			name: 'Washing Machine',
+			name: 'Fragnance',
+			description: 'About Washing Machine'
+		},
+		{
+			name: 'Clothes',
 			description: 'About Washing Machine'
 		}
 		]
 		await Categories.bulkCreate(defaultCategories)
-		await Products.bulkCreate(defaultProducts)
+		// await Products.bulkCreate(defaultProducts)
 	}
 	catch(err){
 		console.log(err)
