@@ -1,12 +1,12 @@
 const express = require('express')
 const {createProduct, getAllProduct,filterBasedOnProduct, getProductOnId, updateProduct, deleteProduct } = require('../controller/product')
 
-const { validateProductData } = require('../middleware')
+const { validateProductData, verifyToken } = require('../middleware')
 const routes = express.Router()
 
 routes.post('/ecomm/api/v1/products',[validateProductData], createProduct)
 
-routes.get('/ecomm/api/v1/products', getAllProduct)
+routes.get('/ecomm/api/v1/products',[verifyToken], getAllProduct)
 
 routes.get('/ecomm/api/v1/products/filter', filterBasedOnProduct)
 

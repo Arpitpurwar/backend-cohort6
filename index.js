@@ -16,7 +16,7 @@ app.listen(serverPort, async ()=> {
 
 async function init(){
 	try{
-		await sequelize.sync({force:true})
+		await sequelize.authenticate()
 
 		const defaultProducts = [
 		{
