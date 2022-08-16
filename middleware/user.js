@@ -1,4 +1,4 @@
-const {User, Role} = require('../models')
+const {User, Role, Sequelize} = require('../models')
 
 async function checkDuplicateUsernameAndEmail(req,res,next){
 	if(req.body.username){
@@ -7,7 +7,7 @@ async function checkDuplicateUsernameAndEmail(req,res,next){
 				username:req.body.username
 			}
 		})
-		console.log('user_+++++=>>>', user)
+
 		if(user){
 			res.status(400).send({msg : 'Username already exist'})
 			return;
@@ -35,25 +35,33 @@ async function checkRoles(req,res,next){
 	if(req.body.roles){
 		let roles = req.body.roles;
 		let flag = true;
-		const savedRoles = await Role.findAll();
-		console.log('saveroles', savedRoles)
-		for(let i = 0 ; i<=savedRoles.length; i++){
-			for(let j = 0; j<=roles.length;j++){
-				if(roles[j] !== savedRoles[i].dataValues.id){
+		const findRoleFromDB = await Role.findAll({
+			attributes:['id']
+		});
+
+		if(findRoleFromDB.length > 0){
+			const storeRoles = []
+
+			for(let i = 0 ; i<findRoleFromDB.length; i++){
+				storeRoles.push(findRoleFromDB[i].dataValues.id)
+			}
+			for(let i = 0; i< roles.length;i++){
+				const result = storeRoles.includes(roles[i])
+				if(!result){
 					flag = false
+					break;
 				}
 			}
-		}
-
-		if(flag){
-			next()
+			if(flag){
+				next()
+			}else{
+				res.status(400).send({msg :'Role id does not exist'})
+				return;
+			}
 		}else{
-			res.status(400).send({msg :'Role id does not exist'})
+			res.status(500).send({msg: 'Internal server error, Role does not found'});
 			return;
 		}
 	}
-
-	res.send({'msg': 'heyy role'})
-	return;
 }
 module.exports = {checkDuplicateUsernameAndEmail,checkRoles}
