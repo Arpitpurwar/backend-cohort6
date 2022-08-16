@@ -6,8 +6,6 @@ async function signUp(req,res){
 	const email = req.body.email;
 	const password = bcrypt.hashSync(req.body.password, 8);
 
-	console.log('password', password)
-
 	try{
 		const user = await User.create({username,email,password})
 		console.log('user', user)
@@ -30,5 +28,8 @@ async function signUp(req,res){
 	
 }
 
+async function signIn(req,res){
 
-module.exports = {signUp}
+}
+
+module.exports = {signUp, signIn}
