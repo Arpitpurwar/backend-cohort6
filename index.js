@@ -18,56 +18,56 @@ async function init(){
 	try{
 		await sequelize.authenticate()
 
-		const defaultProducts = [
-		{
-		    "description":"Nyka best products",
-		    "name" :"MakeUP Kit",
-		    "cost": 870,
-		    "quantity": 20,
-			"CategoryId": 1
-		},
-		{
-    		"description":"Best fragnance",
-		    "name" :"Fogg",
-		    "cost": 280,
-		    "quantity": 20,
-			"CategoryId": 2
-		},
-		{
-    		"description":"Best for summer holidays",
-		    "name" :"Summer Clothes",
-		    "cost": 1200,
-		    "quantity": 20,
-			"CategoryId": 3
-		}
-]
+// 		const defaultProducts = [
+// 		{
+// 		    "description":"Nyka best products",
+// 		    "name" :"MakeUP Kit",
+// 		    "cost": 870,
+// 		    "quantity": 20,
+// 			"CategoryId": 1
+// 		},
+// 		{
+//     		"description":"Best fragnance",
+// 		    "name" :"Fogg",
+// 		    "cost": 280,
+// 		    "quantity": 20,
+// 			"CategoryId": 2
+// 		},
+// 		{
+//     		"description":"Best for summer holidays",
+// 		    "name" :"Summer Clothes",
+// 		    "cost": 1200,
+// 		    "quantity": 20,
+// 			"CategoryId": 3
+// 		}
+// ]
 
-		const defaultCategories = [
-		{
-			name : 'Beauty',
-			description: 'All beauty Products'
-		},
-		{
-			name: 'Fragnance',
-			description: 'All Fragnance Products'
-		},
-		{
-			name: 'Clothes',
-			description: 'All types of Clothes'
-		}
-		]
+// 		const defaultCategories = [
+// 		{
+// 			name : 'Beauty',
+// 			description: 'All beauty Products'
+// 		},
+// 		{
+// 			name: 'Fragnance',
+// 			description: 'All Fragnance Products'
+// 		},
+// 		{
+// 			name: 'Clothes',
+// 			description: 'All types of Clothes'
+// 		}
+// 		]
 
-		const defaultRoles = [
-		{
-			name : 'User'
-		},
-		{
-			name: 'Admin',
-		}
-		]
-		await Categories.bulkCreate(defaultCategories)
-		await Products.bulkCreate(defaultProducts)
-		await Role.bulkCreate(defaultRoles)
+// 		const defaultRoles = [
+// 		{
+// 			name : 'User'
+// 		},
+// 		{
+// 			name: 'Admin',
+// 		}
+// 		]
+// 		await Categories.bulkCreate(defaultCategories)
+// 		await Products.bulkCreate(defaultProducts)
+// 		await Role.bulkCreate(defaultRoles)
 	}
 	catch(err){
 		console.log(err)
