@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const {User} = require('../models')
+const {User, Cart} = require('../models')
 
 async function signUp(req,res){
 	const username = req.body.username;
@@ -9,6 +9,7 @@ async function signUp(req,res){
 
 	try{
 		const user = await User.create({username,email,password})
+		await Cart.create({id: user.id})
 		console.log('user', user)
 		if(req.body.roles){
 			const roles = req.body.roles;
