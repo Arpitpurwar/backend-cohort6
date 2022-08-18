@@ -6,7 +6,7 @@ async function updateCart(req,res){
 		const cart = await Cart.findByPk(cartId);
 		if(cart){
 			const productIds = req.body.productIds;
-
+			const alreadyAddedProducts = await cart.getProducts();
 			const products = await Products.findAll({
 				where: {
 					id : productIds
@@ -14,7 +14,7 @@ async function updateCart(req,res){
 			})
 
 			if(products.length > 0){
-				await cart.setProducts(products)
+				await cart.setProducts([...products,...alreadyAddedProducts])
 
 				const cartProducts = await cart.getProducts()
 
