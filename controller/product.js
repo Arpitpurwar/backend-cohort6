@@ -20,7 +20,7 @@ async function createProduct(req, res){
 async function getAllProduct(req,res){
 	try{
 		const result = await Products.findAll();
-		res.send(result)
+		res.status(201).send(result)
 	}catch(err){
 		res.status(500).send({msg: 'Internal server error',err})
 	}

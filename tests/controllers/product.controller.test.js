@@ -1,4 +1,4 @@
-const {createProduct} = require('../../controller/product')
+const {createProduct, getAllProduct, filterBasedOnProduct} = require('../../controller/product')
 const { Products } = require('../../models')
 const {mockRequest, mockResponse} = require('../interceptor')
 
@@ -78,4 +78,28 @@ describe('Product Controller testing',()=>{
 			 })	
 	})
 
+	it('test success findAll scenario', async ()=> {
+
+		const spy = jest.spyOn(Products, 'findAll').mockImplementation(()=>{
+			return Promise.resolve([{
+								name: 'sony tv',
+								description:'About TV',
+								cost: 234,
+								quantity: 12,
+								CategoryId: 1
+							}])
+		})
+
+		await getAllProduct(req,res)
+
+		expect(spy).toHaveBeenCalled()
+		expect(res.status).toHaveBeenCalledWith(201)
+		expect(res.send).toHaveBeenCalledWith([{
+								name: 'sony tv',
+								description:'About TV',
+								cost: 234,
+								quantity: 12,
+								CategoryId: 1
+							}])
+	})
 })
