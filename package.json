@@ -4,7 +4,8 @@
   "description": "ecommerce project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
+    "test": "cross-env NODE_ENV=test jest --coverage --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,11 @@
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.19",
     "sequelize": "^6.21.3",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.3"
   }
 }

@@ -10,10 +10,10 @@ app.use(categoryRoutes)
 app.use(productRoutes)
 app.use(cartRoutes)
 
-app.listen(serverPort, async ()=> {
-	console.log('server is running on this port', serverPort)
-	await init()
-})
+// app.listen(serverPort, async ()=> {
+// 	console.log('server is running on this port', serverPort)
+// 	await init()
+// })
 
 async function init(){
 	try{
@@ -75,3 +75,5 @@ async function init(){
 	}
 
 }
+
+module.exports = {app}
