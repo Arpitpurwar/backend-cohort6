@@ -11,7 +11,7 @@ async function createProduct(req, res){
 		const CategoryId = productData.CategoryId
 
 		const result = await Products.create({name, description, cost, quantity, CategoryId});
-		res.send({msg: 'Product got created',result})
+		res.status(200).send({msg: 'Product got created',result})
 	}catch(err){
 		res.status(500).send({msg: 'Internal server error',err})
 	}
