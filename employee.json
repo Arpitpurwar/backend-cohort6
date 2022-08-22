@@ -1,0 +1,32 @@
+[{
+	"ObjectId" : "ABBCJDJDJD5666677",
+	"EmployeeID" : 1,
+	"EmployeeName" : "Test1",
+	"LocationName" : "Delhi",
+	"Address":{
+		"primaryAddress" : "",
+		"SecondaryAddress" : ""
+	},
+	"Hobbies" : ["Painting", "Singing"],
+	"ContactNumber" : {
+		"primaryNumber" : "756576886787",
+		"SecondaryNUmber" : "765668679676"
+	},
+	"Occupation" : ""
+},
+{
+	"ObjectId" : "ABBCJDJDJD5666677",
+	"EmployeeID" : 1,
+	"EmployeeName" : "Test1",
+	"DepartmentName" : "IT",
+	"LocationName" : "Delhi",
+	"Address":{
+		"primaryAddress" : "",
+		"SecondaryAddress" : ""
+	},
+	"Hobbies" : ["Painting", "Singing"],
+	"ContactNumber" : {
+		"primaryNumber" : "756576886787",
+		"SecondaryNUmber" : "765668679676"
+	}
+}]
