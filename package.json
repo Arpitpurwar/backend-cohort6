@@ -4,7 +4,8 @@
   "description": "ecommerce project",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --coverage"
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
