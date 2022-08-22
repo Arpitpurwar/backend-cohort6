@@ -46,7 +46,7 @@ async function signIn(req,res){
 				res.status(400).send({msg : 'Username/password is not correct'})	
 			}
 
-			const token = await jwt.sign({id : user.id}, process.env.JWT_SECRET_KEY, {
+			const token = await jwt.sign({id : user.id}, 'helloIamsecretkey', {
 				expiresIn: '1h'
 			})
 
