@@ -15,10 +15,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "test_20222",
+    "password": "2c90c44c",
+    "database": "ecommerce_prod",
+    "host": "db4free.net",
     "dialect": "mysql"
   }
 }
